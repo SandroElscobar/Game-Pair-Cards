@@ -1,0 +1,44 @@
+body {
+    display: flex;
+}
+
+.container {
+    background: rgb(138, 139, 137);
+}
+
+
+#card {
+    perspective: 1000px;
+}
+
+.card {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .3);
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+
+.card-body {
+    transform: rotateY(180deg);
+    opacity: 0;
+    transition: opacity .5s, transform 1s;
+}
+
+.card:hover {
+    cursor: pointer;
+}
+
+.card:active {
+    transform: scale(0.97);
+    transition: transform 1s;
+}
+
+.card.flip {
+    transform: rotateY(180deg);
+    transition: transform 1s;
+}
+
+.card.flip .card-body {
+    opacity: 1;
+    transition: opacity .5s;
+}
